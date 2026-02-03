@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentasi Sidang PKL - Revan Leonell Morthen | SMK Negeri 1 Manggar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #4a8cff;
+            --accent: #ff9800;
+            --light: #f5f7fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --success: #28a745;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 28px;
+        }
+        
+        .logo-text h1 {
+            font-size: 18px;
+            color: var(--primary);
+        }
+        
+        .logo-text p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+        
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-header h2 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 15px auto 0;
+        }
+        
+        /* Home Section */
+        #home {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-bottom: none;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        #home h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        #home p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .presenter-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 700px;
+            margin: 30px auto;
+            backdrop-filter: blur(5px);
+            text-align: left;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .info-item i {
+            color: var(--accent);
+            margin-top: 3px;
+        }
+        
+        /* Card Styles */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-body ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .card-body li {
+            margin-bottom: 8px;
+        }
+        
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            right: -10px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even):after {
+            left: -10px;
+        }
+        
+        /* Technology Badges */
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Button */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e68900;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #1e4780;
+        }
+        
+        /* Image Placeholder */
+        .img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--gray);
+            margin: 15px 0;
+        }
+        
+        .img-placeholder i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .timeline:before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:after {
+                left: 21px;
+            }
+            
+            #home h1 {
+                font-size: 28px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            header, footer, .btn {
+                display: none;
+            }
+            
+            main {
+                margin-top: 0;
+            }
+            
+            section {
+                page-break-inside: avoid;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>SIDANG PKL - RPL</h1>
+                        <p>SMK Negeri 1 Manggar | PT Metanouva Informatika</p>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="active">Beranda</a>
+                    <a href="#pendahuluan">Pendahuluan</a>
+                    <a href="#profil">Profil Perusahaan</a>
+                    <a href="#landasan">Landasan Teori</a>
+                    <a href="#implementasi">Implementasi</a>
+                    <a href="#penutup">Penutup</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <div class="container">
+                <h1>PRESENTASI SIDANG PRAKTIK KERJA LAPANGAN</h1>
+                <p>Strategi Pengembangan & Implementasi Aplikasi POS Kasir Monolith Berbasis Laravel</p>
+                <div class="presenter-info">
+                    <h3>Disusun oleh: REVAN LEONELL MORTHEN</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <div>
+                                <strong>NISN:</strong> 0089445016<br>
+                                <strong>Kelas:</strong> XII RPL<br>
+                                <strong>Jurusan:</strong> Rekayasa Perangkat Lunak
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-school"></i>
+                            <div>
+                                <strong>Sekolah:</strong> SMK Negeri 1 Manggar<br>
+                                <strong>Pembimbing:</strong> Prayogi Martaguna, S.Kom
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <strong>Tempat PKL:</strong> PT Metanouva Informatika (Digitak Studio)<br>
+                                <strong>Pembimbing Lapangan:</strong> Pebrian Agung Gumilang
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Waktu PKL:</strong> 1 Oktober - 24 Desember 2025<br>
+                                <strong>Tanggal Sidang:</strong> 5 Februari 2026
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#pendahuluan" class="btn">Mulai Presentasi</a>
+            </div>
+        </section>
+
+        <!-- Pendahuluan Section -->
+        <section id="pendahuluan">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Pendahuluan</h2>
+                    <p>Latar belakang, tujuan, dan manfaat pelaksanaan PKL di PT Metanouva Informatika</p>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Latar Belakang</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>PKL adalah kegiatan wajib bagi siswa SMK untuk menerapkan ilmu yang dipelajari di sekolah ke dunia kerja nyata. Bagi siswa Jurusan RPL di SMK Negeri 1 Manggar, PKL ini penting untuk:</p>
+                            <ul>
+                                <li>Mengasah keterampilan pemrograman</li>
+                                <li>Memahami cara kerja di perusahaan TI</li>
+                                <li>Memenuhi syarat mengikuti Ujian Kompetensi Keahlian (UKK)</li>
+                            </ul>
+                            <p>Selama PKL, saya bertanggung jawab memimpin, menginspirasi, dan mengarahkan tim pengembangan aplikasi POS Kasir dengan tugas:</p>
+                            <ul>
+                                <li>Pembagian tugas sesuai minat dan kemampuan</li>
+                                <li>Membuat alur aplikasi dan konsep (Flowchart)</li>
+                                <li>Membuat Dokumen Teknis dan Manual Book aplikasi</li>
+                                <li>Menyiapkan materi presentasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Tujuan PKL</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Menerapkan konsep dan keterampilan pemrograman web (PHP, OOP, MVC) ke dalam proyek nyata</li>
+                                <li>Menguasai alat dan teknologi industri (Git/GitHub, Laravel)</li>
+                                <li>Mengembangkan modul Admin Panel lengkap untuk aplikasi POS Kasir</li>
+                                <li>Memahami dan mengimplementasikan sistem keamanan dasar (Role-Based Access Control)</li>
+                                <li>Melatih kemampuan kolaborasi dalam tim dengan pembagian tugas terstruktur</li>
+                                <li>Membentuk sikap profesional, adaptasi, kerja sama tim, dan disiplin</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Manfaat PKL</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li><strong>Bagi Siswa:</strong> Pengalaman nyata pengembangan software, peningkatan skill pemrograman, belajar kerja sama tim dan komunikasi</li>
+                                <li><strong>Bagi Sekolah:</strong> Evaluasi kurikulum, hubungan dengan industri</li>
+                                <li><strong>Bagi Perusahaan:</strong> Rekrutmen potensial, kontribusi pendidikan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profil Perusahaan Section -->
+        <section id="profil">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Profil Perusahaan</h2>
+                    <p>PT Metanouva Informatika (Digitak Studio)</p>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Sejarah Perusahaan</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Didirikan tahun 1998 oleh sekelompok mahasiswa Jurusan Fisika ITB, di tengah situasi krisis multidimensi bangsa Indonesia. Salah satu pendiri dan perintis utama adalah Dimas Syailendra R. sebagai Direktur Utama.</p>
+                            <p>Fokus utama sejak awal adalah pengembangan dan pembangunan sistem informasi untuk sektor pemerintahan dan swasta.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Visi & Misi</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Visi:</strong> Menjadi perusahaan penyedia layanan dan solusi teknologi informasi yang inovatif, handal dan terpercaya.</p>
+                            <p><strong>Misi:</strong> Memberikan solusi integrasi sistem yang inovatif dan berorientasi pada solusi terpercaya berbasis teknologi informasi.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Bidang Usaha</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Konsultasi Teknologi Informasi</li>
+                                <li>Pengembangan Perangkat Lunak (Software Development)</li>
+                                <li>Digital Marketing</li>
+                                <li>Jasa Pemeliharaan Komputer</li>
+                            </ul>
+                            <p>Melayani sektor pemerintah dan swasta dengan fokus pada solusi digital untuk meningkatkan efisiensi dan keunggulan kompetitif.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Waktu Pelaksanaan</th>
+                                <th>Tempat Pelaksanaan</th>
+                                <th>Jam Kerja</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 Oktober - 24 Desember 2025 (3 bulan)</td>
+                                <td>Jl. Gunung Batu dalam Komplek Citra Asri Permai No. C26, Pasir Kaliki, Cimahi Utara, Jawa Barat 40514</td>
+                                <td>Senin - Jumat<br>09.30 WIB - 16.00 WIB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="img-placeholder">
+                    <i class="fas fa-image"></i>
+                    <p>Struktur Organisasi Perusahaan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Landasan Teori Section -->
+        <section id="landasan">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Landasan Teori</h2>
+                    <p>Konsep dan teknologi yang digunakan dalam pengembangan aplikasi POS Kasir</p>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Website & Sistem POS</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Website:</strong> Sekumpulan halaman digital yang saling terhubung, berisi teks, gambar, video, dan elemen interaktif lainnya yang dapat diakses melalui internet.</p>
+                            <p><strong>Sistem POS (Point of Sale):</strong> Sistem terkomputerisasi yang menggabungkan hardware dan software untuk memproses transaksi penjualan, mengelola inventaris, pelanggan, dan laporan bisnis secara otomatis.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Git & GitHub</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Git:</strong> Sistem kontrol versi terdistribusi untuk melacak perubahan kode secara lokal.</p>
+                            <p><strong>GitHub:</strong> Platform berbasis cloud yang menyediakan hosting repositori Git, kolaborasi, dan manajemen proyek.</p>
+                            <p>Digunakan untuk kolaborasi tim dalam pengembangan aplikasi.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Laravel Framework</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Framework PHP open-source modern yang menerapkan pola arsitektur Model-View-Controller (MVC) untuk struktur kode yang terorganisir.</p>
+                            <div class="tech-badges">
+                                <span class="tech-badge">PHP 8.3+</span>
+                                <span class="tech-badge">MVC Pattern</span>
+                                <span class="tech-badge">Eloquent ORM</span>
+                                <span class="tech-badge">Blade Template</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-container" style="margin-top: 30px;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>OOP (Object-Oriented Programming)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Paradigma pemrograman yang menjadikan objek sebagai unit utama, merepresentasikan entitas dunia nyata dengan atribut (data) dan metode (fungsi/perilaku).</p>
+                            <p><strong>Konsep utama:</strong> Kelas, Objek, Enkapsulasi, Abstraksi, Pewarisan, Polimorfisme.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>MVC (Model-View-Controller)</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Pola desain arsitektur perangkat lunak yang memisahkan aplikasi menjadi tiga komponen utama:</p>
+                            <ul>
+                                <li><strong>Model:</strong> Data dan logika bisnis</li>
+                                <li><strong>View:</strong> Tampilan antarmuka pengguna</li>
+                                <li><strong>Controller:</strong> Penghubung antara Model dan View</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Teknologi yang Digunakan</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-badges">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Bootstrap 5</span>
+                                <span class="tech-badge">Chart.js</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">AJAX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementasi Section -->
+        <section id="implementasi">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Implementasi Proyek</h2>
+                    <p>Proses pengembangan aplikasi POS Kasir Monolith berbasis Laravel</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Pembagian Peran dalam Tim</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Role</th>
+                                        <th>Nama</th>
+                                        <th>Bertanggung Jawab</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>UI/UX Design</td>
+                                        <td>M. Afdhal</td>
+                                        <td>Arsitektur, pemilihan warna dan letak</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Frontend Developer</td>
+                                        <td>Dio P & Mico S</td>
+                                        <td>Blade, mencetak design dari UI/UX</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Backend Developer</td>
+                                        <td>Hadiqa & Revan L.M.</td>
+                                        <td>Controller, Model, Database</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Fase 1: Setup & Core (Minggu 1)</h3>
+                            <ul>
+                                <li>Struktur aplikasi monolith</li>
+                                <li>Desain database</li>
+                                <li>Setup environment development</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Fase 2: Fitur Kasir (Minggu 2)</h3>
+                            <ul>
+                                <li>POS interface</li>
+                                <li>Cart management</li>
+                                <li>Payment process</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Fase 3: Admin & Laporan (Minggu 3)</h3>
+                            <ul>
+                                <li>Transaction history</li>
+                                <li>Daily report</li>
+                                <li>User management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Fase 4: Testing & Presentasi (Minggu 4)</h3>
+                            <ul>
+                                <li>Testing Role-Based</li>
+                                <li>Manual book</li>
+                                <li>Dokumentasi teknis</li>
+                                <li>Presentasi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Struktur Database Aplikasi POS Kasir</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Tabel</th>
+                                        <th>Kolom Utama</th>
+                                        <th>Fungsi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>products</strong></td>
+                                        <td>id, barcode, name, price, stock</td>
+                                        <td>Menyimpan data produk yang dijual</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>transactions</strong></td>
+                                        <td>id, invoice_no, cashier_id, total, paid, change</td>
+                                        <td>Menyimpan data transaksi penjualan</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>transaction_items</strong></td>
+                                        <td>id, transaction_id, product_id, qty, price, subtotal</td>
+                                        <td>Menyimpan item-item dalam transaksi</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>users</strong></td>
+                                        <td>id, name, email, password, role</td>
+                                        <td>Menyimpan data pengguna (admin & kasir)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="img-placeholder">
+                    <i class="fas fa-diagram-project"></i>
+                    <p>Flowchart Sistem POS Kasir</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Penutup Section -->
+        <section id="penutup">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Penutup</h2>
+                    <p>Kesimpulan, saran, dan ucapan terima kasih</p>
+                </div>
+                
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Kesimpulan</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Konsep pemrograman berorientasi objek (OOP), arsitektur MVC, dan penggunaan Git/GitHub berhasil diterapkan dalam pengembangan aplikasi web nyata dengan framework Laravel.</li>
+                                <li>Modul Admin Panel (Dashboard, Manajemen Produk, Transaksi, dan Laporan) berhasil dikembangkan dengan fitur lengkap.</li>
+                                <li>Teknologi industri (Laravel 12, MySQL, Bootstrap 5, Chart.js) dikuasai dengan baik.</li>
+                                <li>Sistem keamanan dasar (Role-Based Access Control) berhasil diterapkan untuk membedakan hak akses antara admin dan kasir.</li>
+                                <li>Kemampuan kolaborasi dan problem-solving terasah melalui pembagian tugas dalam tim dan penyelesaian masalah teknis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Saran</h3>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Untuk Sekolah (SMK Negeri 1 Manggar):</strong></p>
+                            <ul>
+                                <li>Mempertimbangkan untuk memasukkan framework Laravel ke dalam mata pelajaran Pemrograman Web Lanjutan</li>
+                                <li>Menambah jam pelajaran dan praktik kolaborasi menggunakan Git/GitHub</li>
+                                <li>Menerapkan lebih banyak pembelajaran berbasis proyek nyata</li>
+                            </ul>
+                            
+                            <p><strong>Untuk Siswa SMK Negeri 1 Manggar:</strong></p>
+                            <ul>
+                                <li>Jangan hanya puas dengan dasar-dasar Laravel, eksplorasi fitur lanjutan</li>
+                                <li>Mulai membangun portfolio proyek pribadi di GitHub sejak dini</li>
+                                <li>Mempelajari React.js atau Vue.js sebagai pelengkap skill Laravel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <h3>Ucapan Terima Kasih</h3>
+                    <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        Saya mengucapkan terima kasih yang sebesar-besarnya kepada semua pihak yang telah mendukung dan membimbing selama pelaksanaan PKL, terutama kepada SMK Negeri 1 Manggar, PT Metanouva Informatika, pembimbing lapangan, rekan kerja, dan keluarga.
+                    </p>
+                    <a href="#home" class="btn btn-primary" style="margin-top: 20px;">
+                        <i class="fas fa-home"></i> Kembali ke Beranda
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Presentasi Sidang PKL</h3>
+                    <p>Strategi Pengembangan & Implementasi Aplikasi POS Kasir Monolith Berbasis Laravel</p>
+                    <p>SMK Negeri 1 Manggar</p>
+                    <p>Tahun Ajaran 2025/2026</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak & Informasi</h3>
+                    <p><i class="fas fa-user"></i> Revan Leonell Morthen</p>
+                    <p><i class="fas fa-envelope"></i> NISN: 0089445016</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Manggar, Belitung Timur</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Presentasi Sidang</h3>
+                    <p><i class="fas fa-calendar-check"></i> Tanggal: 4 Februari 2026</p>
+                    <p><i class="fas fa-clock"></i> Waktu: Sesuai jadwal sidang</p>
+                    <p><i class="fas fa-school"></i> Tempat: SMK Negeri 1 Manggar</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Presentasi Sidang PKL - Revan Leonell Morthen. Semua hak dilindungi.</p>
+                <p style="font-size: 14px; margin-top: 10px;">Dokumen Laporan Lengkap: LaporanRvvnn.docx</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling untuk navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Update active nav link berdasarkan scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let currentSectionId = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                
+                if(window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSectionId = '#' + section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Tambahkan animasi saat halaman dimuat
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s';
+            
+            setTimeout(function() {
+                document.body.style.opacity = '1';
+            }, 100);
+            
+            // Animasi untuk timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s, transform 0.5s';
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 300 + (index * 200));
+            });
+            
+            // Animasi untuk cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s, transform 0.5s';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 500 + (index * 100));
+            });
+        });
+        
+        // Fitur print-friendly
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+P untuk print
+            if((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+        
+        // Tambahkan tombol print di footer (opsional)
+        const printButton = document.createElement('button');
+        printButton.innerHTML = '<i class="fas fa-print"></i> Cetak Presentasi';
+        printButton.className = 'btn btn-primary';
+        printButton.style.marginTop = '20px';
+        printButton.onclick = function() {
+            window.print();
+        };
+        
+        document.querySelector('#penutup .btn-primary').parentNode.appendChild(printButton);
+    </script>
+</body>
+</html>
